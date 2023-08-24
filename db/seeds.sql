@@ -1,4 +1,4 @@
-use comapany_db
+use company_db
 
 insert into department (name) 
 values 

@@ -47,9 +47,9 @@ Run test however you feel like it?
 
 ## Questions
 
+![Github](./assets/github.jpg)
+
 GitHub: [MartinezN2014](https://github.com/MartinezN2014/SQLEmployeeTracker)
 Email: [Email](2014nmartinez@gmail.com)
-
-![Github](./assets/github.jpg)
 
 The youtube video of my project [link](https://www.youtube.com/watch?v=KFp9F4JnBzg)

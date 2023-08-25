@@ -2,12 +2,12 @@
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 
-//mysql2 connection to the database
+//Mysql2 connection
 const db = mysql.createConnection({
   host: "localhost",
   port: "3306",
-  user: "root",
-  password: "root",
+  user: //Add your mysql username in a string. Dont forget your comma afterwards
+  password: //Add your mysql password in a string. Dont forget your comma afterwards
   database: "company_db",
 });
 
@@ -32,7 +32,8 @@ function startPrompt() {
         "Add An Employee",
         "Update An Employee Role",
       ],
-    }) //Depending on your choices it should run the designated function.
+    })
+    //depending on your choices it should run the designated function
     .then((answer) => {
       switch (answer.menu) {
         case "View All Departments":
@@ -68,6 +69,7 @@ function viewAllDepartments() {
       res.status(500).json({ error: err.message });
       return;
     }
+    console.table(result);
     startPrompt();
   });
 }
@@ -80,6 +82,7 @@ function viewAllRoles() {
       res.status(500).json({ error: err.message });
       return;
     }
+    console.table(result);
     startPrompt();
   });
 }
@@ -100,6 +103,7 @@ function viewAllEmployees() {
               ORDER By employee.id`;
   db.query(sql, (err, result) => {
     if (err) throw err;
+    console.table(result);
     startPrompt();
   });
 }
@@ -130,6 +134,7 @@ function addDepartment() {
             res.status(500).json({ error: err.message });
             return;
           }
+          console.table(result);
           startPrompt();
         });
       });
@@ -174,6 +179,7 @@ function addRole() {
               res.status(500).json({ error: err.message });
               startPrompt();
             }
+            console.table(result);
             startPrompt();
           });
         }
@@ -230,6 +236,7 @@ function addEmployee() {
               res.status(500).json({ error: err.message });
               startPrompt();
             }
+            console.table(result);
             startPrompt();
           });
         }
@@ -269,6 +276,7 @@ function updateEmployeeRole() {
               res.status(500).json({ error: err.message });
               startPrompt();
             }
+            console.table(result);
             startPrompt();
           });
         }
